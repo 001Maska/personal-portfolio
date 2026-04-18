@@ -547,9 +547,27 @@
     .nav-links { gap: 1.5rem; }
   }
 
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero { padding: 0 1.5rem; min-height: 90vh; }
+    section { padding: 4rem 1.5rem; }
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-steps { grid-template-columns: 1fr; }
+    .hero-name { font-size: clamp(2.5rem, 10vw, 5rem); }
+    .hero-desc { font-size: 0.9rem; }
+    .btn-primary, .btn-ghost { padding: 0.8rem 1.5rem; font-size: 0.7rem; }
+    .section-title { font-size: clamp(1.8rem, 5vw, 2.8rem); }
+    .project-card { padding: 2rem; min-height: 300px; }
+  }
+
   @media (max-width: 560px) {
     .nav-links { display: none; }
     .process-steps { grid-template-columns: 1fr; }
     .hero-cta { flex-direction: column; }
     .contact-header::before { display: none; }
+    .hero { min-height: 80vh; }
+    .hero-name { font-size: clamp(2rem, 12vw, 4rem); }
+    .hero-desc { font-size: 0.85rem; max-width: 100%; }
+    .section-title { font-size: clamp(1.5rem, 6vw, 2.5rem); }
+    .project-card { padding: 1.5rem; min-height: 280px; }
   }
