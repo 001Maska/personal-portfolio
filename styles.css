@@ -299,6 +299,7 @@
     color: var(--accent);
     letter-spacing: -0.05em;
     line-height: 1;
+    word-break: break-word;
   }
   .stat-desc {
     font-size: 0.7rem;
@@ -306,6 +307,7 @@
     color: var(--muted);
     text-transform: uppercase;
     margin-top: 0.4rem;
+    word-break: break-word;
   }
 
   /* SKILLS */
@@ -472,9 +474,11 @@
     font-size: clamp(2.5rem, 5vw, 4.5rem);
     font-weight: 800;
     letter-spacing: -0.04em;
-    line-height: 1;
+    line-height: 1.1;
     position: relative;
     z-index: 1;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
   .contact-big em { font-style: normal; color: var(--accent); }
   .contact-sub {
@@ -558,6 +562,9 @@
     .btn-primary, .btn-ghost { padding: 0.8rem 1.5rem; font-size: 0.7rem; }
     .section-title { font-size: clamp(1.8rem, 5vw, 2.8rem); }
     .project-card { padding: 2rem; min-height: 300px; }
+    .stat-number { font-size: 2.2rem; }
+    .contact-big { font-size: clamp(2rem, 6vw, 3.5rem); }
+    .contact-header { padding: 3rem 1.5rem; }
     .cursor, .cursor-ring { display: none; }
     body { cursor: auto; }
   }
