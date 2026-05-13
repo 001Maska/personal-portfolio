@@ -15,6 +15,8 @@ A modern, responsive personal portfolio website showcasing my web development sk
 - **HTML5** - Semantic markup
 - **CSS3** - Custom properties, flexbox, grid, animations
 - **JavaScript** - Interactive elements and animations
+- **PHP** - Contact saving and admin dashboard logic
+- **MySQL** - Projects and message storage
 
 ## 📱 Sections
 
@@ -40,6 +42,16 @@ npx serve .
 
 # Then open http://localhost:8000 in your browser
 ```
+
+For the PHP/MySQL backend features, run the site from a PHP server instead:
+
+```bash
+php -S localhost:8000
+```
+
+Then open http://localhost:8000 in your browser.
+
+If you use MySQL, import `schema.sql` into a `portfolio` database and update `config.php` with your database credentials.
 
 ## 🚀 Deployment
 

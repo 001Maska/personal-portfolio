@@ -22,8 +22,17 @@
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <div class="nav-actions">
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle light/dark mode">🌙</button>
+    <button id="menuToggle" class="menu-toggle" type="button" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -223,6 +232,51 @@
         <a href="#" class="project-link">GitHub ↗</a>
       </div>
     </div>
+    <div class="project-card">
+      <div class="project-num">007</div>
+      <div class="project-name">Süleyman Seven Website</div>
+      <div class="project-desc">A polished business website with responsive design and modern interactions. Clean visual storytelling that showcases services and builds trust.</div>
+      <div class="project-tech">
+        <span class="tech-badge">HTML</span>
+        <span class="tech-badge">CSS</span>
+        <span class="tech-badge">JavaScript</span>
+      </div>
+      <div class="project-links">
+        <a href="https://suleymanseven.com/" target="_blank" class="project-link">Live Demo ↗</a>
+        <a href="#" class="project-link">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-num">008</div>
+      <div class="project-name">MRT Kurubuz Website</div>
+      <div class="project-desc">A modern landing page built for clarity, conversion, and brand trust. Fully optimized for mobile and desktop experiences.</div>
+      <div class="project-tech">
+        <span class="tech-badge">HTML</span>
+        <span class="tech-badge">CSS</span>
+        <span class="tech-badge">JavaScript</span>
+      </div>
+      <div class="project-links">
+        <a href="https://mrtkurubuz.com/" target="_blank" class="project-link">Live Demo ↗</a>
+        <a href="#" class="project-link">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DYNAMIC PROJECTS -->
+<section id="projects">
+  <div class="section-label">03.5 — Projects</div>
+  <h2 class="section-title reveal">Live project feed.</h2>
+  <div class="project-slider reveal">
+    <button id="prevSlide" class="slider-control" aria-label="Previous project">‹</button>
+    <div class="slider-track" id="sliderTrack">
+      <div class="slider-card placeholder">
+        <div class="project-num">Loading</div>
+        <div class="project-name">Fetching projects...</div>
+        <div class="project-desc">This section loads project data from the database with AJAX.</div>
+      </div>
+    </div>
+    <button id="nextSlide" class="slider-control" aria-label="Next project">›</button>
   </div>
 </section>
 
@@ -285,6 +339,29 @@
         <div class="link-arrow">↗</div>
       </a>
     </div>
+    <form id="contactForm" class="contact-form reveal" novalidate>
+      <div class="form-grid">
+        <label>
+          Name
+          <input type="text" name="name" id="contactName" required minlength="2" placeholder="Your name">
+          <span class="field-error" id="nameError"></span>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" id="contactEmail" required placeholder="you@example.com">
+          <span class="field-error" id="emailError"></span>
+        </label>
+        <label class="full-width">
+          Message
+          <textarea name="message" id="contactMessage" rows="5" required minlength="12" placeholder="Tell me about your project"></textarea>
+          <span class="field-error" id="messageError"></span>
+        </label>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Send Message</button>
+        <div class="form-status" id="contactStatus"></div>
+      </div>
+    </form>
   </div>
 </section>
 
@@ -293,41 +370,6 @@
   <span>Built with clean code & caffeine.</span>
 </footer>
 
-<script>
-  // Custom cursor
-  const cursor = document.getElementById('cursor');
-  const ring = document.getElementById('cursorRing');
-  let mx = 0, my = 0, rx = 0, ry = 0;
-
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    cursor.style.left = mx + 'px';
-    cursor.style.top = my + 'px';
-  });
-
-  function animateRing() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    ring.style.left = rx + 'px';
-    ring.style.top = ry + 'px';
-    requestAnimationFrame(animateRing);
-  }
-  animateRing();
-
-  // Nav scroll
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
-  });
-
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
-</script>
+<script src="scripts.js" defer></script>
 </body>
 </html>

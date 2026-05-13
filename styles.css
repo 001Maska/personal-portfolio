@@ -516,6 +516,167 @@
   .link-arrow { font-size: 1.2rem; transition: transform 0.2s; }
   .contact-link-item:hover .link-arrow { transform: translate(4px, -4px); }
 
+  /* NAV ACTIONS */
+  .nav-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  .theme-toggle,
+  .menu-toggle {
+    border: 1px solid rgba(232,238,244,0.12);
+    background: rgba(14,19,24,0.9);
+    color: var(--text);
+    width: 42px;
+    height: 42px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s, border-color 0.2s;
+  }
+  .theme-toggle:hover,
+  .menu-toggle:hover { background: rgba(14,19,24,1); border-color: var(--accent); }
+  .menu-toggle span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+  }
+  .menu-toggle span + span { margin-top: 5px; }
+
+  body.light-theme {
+    --bg: #f5f7fb;
+    --surface: #ffffff;
+    --surface2: #eef3fc;
+    --border: #d5dde8;
+    --accent: #0066ff;
+    --accent2: #00c7b6;
+    --text: #0f172a;
+    --muted: #475569;
+    --dim: #64748b;
+  }
+
+  .project-slider {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  .slider-track {
+    display: grid;
+    gap: 1rem;
+    min-height: 340px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .slider-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    display: grid;
+    gap: 1.2rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .slider-card:hover { transform: translateY(-4px); box-shadow: 0 22px 60px rgba(0,0,0,0.12); }
+  .slider-card.placeholder { opacity: 0.7; }
+  .slider-card img {
+    width: 100%;
+    min-height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+  .slider-card .project-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .slider-control {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    width: 52px;
+    height: 52px;
+    font-size: 1.7rem;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .slider-control:hover { transform: translateY(-2px); background: var(--surface2); }
+
+  .contact-form {
+    padding: 3rem 4rem 2rem;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    display: grid;
+    gap: 1.5rem;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+  .contact-form label {
+    display: grid;
+    gap: 0.65rem;
+    font-size: 0.8rem;
+    color: var(--text);
+  }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    padding: 1rem 1rem;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .contact-form input:focus,
+  .contact-form textarea:focus { outline: none; border-color: var(--accent); background: var(--surface2); }
+  .contact-form .full-width { grid-column: 1 / -1; }
+  .field-error {
+    min-height: 1.1rem;
+    color: #ff6b6b;
+    font-size: 0.78rem;
+  }
+  .form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+  .form-status {
+    color: var(--accent);
+    font-size: 0.9rem;
+    min-height: 1.4rem;
+  }
+
+  @media (max-width: 900px) {
+    .project-slider { grid-template-columns: 1fr; }
+    .slider-control { width: 48px; height: 48px; }
+    .form-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 560px) {
+    .nav-links { display: none; }
+    .nav-actions { gap: 0.7rem; }
+    body.nav-open nav .nav-links {
+      position: fixed;
+      inset: 72px 1rem auto 1rem;
+      display: grid;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: rgba(8,12,16,0.98);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      z-index: 99;
+    }
+  }
+
   /* FOOTER */
   footer {
     position: relative;
